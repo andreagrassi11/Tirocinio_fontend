@@ -1,0 +1,25 @@
+.container {
+    background: rgba(0, 0, 0, 0.61);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 500px;
+    height: 600px;
+}
+
+.logo {
+    margin-top: 15px;
+}
+
+.inputField {
+    width: 70%;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+}
+
+.usernameInput,
+.passwordInput {
+    width: 100%;
+}
