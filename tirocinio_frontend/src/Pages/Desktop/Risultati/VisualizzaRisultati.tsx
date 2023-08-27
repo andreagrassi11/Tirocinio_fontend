@@ -2,11 +2,33 @@ import './Risultati.css';
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { checkJwt } from '../../../Utils/AuthService';
 import { TakeShowId } from '../../../Utils/ShowService';
 import { TakeAnswerId, TakeAnswerUser, TakeQuestionShowRealizedId, TakeShowRealizedId, TakeUserShowId } from '../../../Utils/ResultService';
-import { AllSeriesType, BarChart } from '@mui/x-charts';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+  } from 'chart.js';
+  import { Bar } from 'react-chartjs-2';
+import { createDataGraphDinamically, createDinamically, createDinamicallyAnswer, options, optionsRisultati } from '../../../Utils/BigScreenService';
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+);
+
+
+const labels = ['January', 'February', 'March', 'April'];
 
 function VisualizzaRisultati() {
 
@@ -21,6 +43,7 @@ function VisualizzaRisultati() {
     const [questions, setQuestions] = useState<any>([]);
     const [answers, setAnswers] = useState<any>({});
     const [voti, setVoti] = useState<any>([1,2,3,4]);
+    const [data, setData] = useState<any>(null);
 
     useEffect(() => {
         const check = async () => {
@@ -58,6 +81,7 @@ function VisualizzaRisultati() {
         let votazioni:any = [];
         let partecipanti:any = await TakeUserShowId(showReId);
         let answers:any = await TakeAnswerId(questionId);
+        console.log(answers);
         
         await Promise.all(
             answers.map(async (answer:any, index:any) =>{
@@ -68,29 +92,23 @@ function VisualizzaRisultati() {
             })
         );
 
+        let a = createDinamicallyAnswer(questionText, partecipanti.length, votanti, answers[0],answers[1],answers[2],answers[3]);  
+        let labels = createDataGraphDinamically(a);
+        
         //Check empty answer 
-        let risposta0 = answers[0] !== undefined ? answers[0].description : "";
-        let risposta1 = answers[1] !== undefined ? answers[1].description : "";
-        let risposta2 = answers[2] !== undefined ? answers[2].description : "";
-        let risposta3 = answers[3] !== undefined ? answers[3].description : "";
+        let v = createDinamically(votazioni[0],votazioni[1],votazioni[2],votazioni[3]);
 
-        setAnswers({domanda: questionText,
-                partecipanti: partecipanti.length, 
-                votanti: votanti, 
-                risposta1Testo: risposta0, 
-                risposta2Testo: risposta1,
-                risposta3Testo: risposta2, 
-                risposta4Testo: risposta3
-            });
-
-
-        //Check empty answer 
-        let voti0 = votazioni[0] !== undefined ? votazioni[0].length : 0;
-        let voti1 = votazioni[1] !== undefined ? votazioni[1].length : 0;
-        let voti2 = votazioni[2] !== undefined ? votazioni[2].length : 0;
-        let voti3 = votazioni[3] !== undefined ? votazioni[3].length : 0;
-
-        setVoti([voti0,voti1,voti2,voti3]);
+        setAnswers({domanda: questionText, partecipanti: partecipanti.length, votanti: votanti});
+        setData({
+            labels,
+            datasets: [
+                {
+                    label: 'Votazioni',
+                    data: v,
+                    backgroundColor: '#02B2AF',
+                }
+            ],
+        });
     }
     
     return (
@@ -110,10 +128,10 @@ function VisualizzaRisultati() {
                             {(questions.map((question: any, index: any) => (
                                 <h1 className='question' onClick={() => {ShowQuestion(question.id,question.text)}}>{(index+1) + ". "} <span className='q'>{question.text}</span></h1>
                             )))}
-                        </div>
+                        </div>  
                     </div>
                     <div className="w3-col s6 dxRisultati">
-                        {Object.keys(answers).length === 0 ? 
+                        {data === null ? 
                             (<>
                                 <div className="my-center">
                                     <h1 style={{color: 'white', textAlign: 'center', fontSize: '25px'}}>Selezionare domanda a sinistra</h1>
@@ -123,27 +141,12 @@ function VisualizzaRisultati() {
                             :
                             (
                                 <>
-                                    <div className="my-center">
+                                    <div className="my-center" style={{height: '80%'}}>
                                     <h1 style={{color: 'white', textAlign: 'center', fontSize: '25px'}}>Domanda: {answers.domanda}</h1>
                                         <h1 style={{color: 'white', textAlign: 'center', fontSize: '18px'}}>Numero partecipanti: {answers.partecipanti}</h1>
                                         <h1 style={{color: 'white', textAlign: 'center', fontSize: '18px'}}>Numero votanti: {answers.votanti}</h1>
                                         <div className='grafico'>
-                                            <BarChart
-                                                xAxis={[
-                                                    {
-                                                    id: 'barCategories',
-                                                    data: ["1."+answers.risposta1Testo, "2."+answers.risposta2Testo, "3."+answers.risposta3Testo, "4."+answers.risposta4Testo],
-                                                    scaleType: 'band',
-                                                    },
-                                                ]}
-                                                series={[
-                                                    {
-                                                        data: voti
-                                                    },
-                                                ]}
-                                                width={500}
-                                                height={300}
-                                            />
+                                            <Bar options={optionsRisultati} data={data} />
                                         </div>
                                     </div>
                                 </>

@@ -1,9 +1,6 @@
-import Grid from "@mui/material/Grid";
 import './ContainerAvvio.css';
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import DeleteIcon from '@mui/icons-material/Delete';
-import { DeleteShow, DeleteShowQuestionAnswer } from "../../Utils/ShowService";
 
 interface Props {
     Titolo: any,

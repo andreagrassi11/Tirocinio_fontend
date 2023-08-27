@@ -112,4 +112,40 @@ export const options = {
       }
 };
 
+export const optionsRisultati = {
+    maintainAspectRatio: false,
+    plugins: {
+        legend: {
+            display: false,
+            labels: {
+                color: 'white',
+                font: {
+                    size: 30
+                }
+            },
+            position: 'top' as const
+        },
+    },
+    scales: {
+        x: {
+            ticks: { 
+                color: 'white', 
+                font: {
+                    size: 25
+                }, 
+                beginAtZero: true 
+            }
+        },
+        y: {
+            ticks: { 
+                color: 'white', 
+                font: {
+                    size: 25
+                }, 
+                beginAtZero: true 
+            }
+        }
+      }
+};
+
         
