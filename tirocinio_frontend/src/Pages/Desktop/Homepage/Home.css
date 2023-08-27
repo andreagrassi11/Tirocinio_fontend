@@ -85,4 +85,8 @@
     transform: translate(-50%, -50%);
 }
 
-.chart {}
+.chart {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
