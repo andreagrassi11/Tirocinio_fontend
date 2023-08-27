@@ -1,0 +1,61 @@
+.leftBarGrid {
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.54);
+    border-radius: 0px 16px 16px 0px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    -webkit-backdrop-filter: blur(9.8px);
+}
+
+.MuiGrid-container,
+.MuiGrid-item {
+    height: 100% !important;
+    margin-top: 0px !important;
+}
+
+/*----------------- List --------------------*/
+.icon {
+    margin-left: 10px;
+    margin-right: 13px;
+}
+
+.noPaddingTopBottom {
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+.noPaddingTopBottom:hover {
+    background-color: transparent;
+}
+
+.clickAnimation {
+    margin-left: -16px !important;
+    border-radius: 0 22px 22px 0 !important;
+    margin-right: -16px !important;
+}
+
+.selected {
+    background-color: #ceaa5cbe !important;
+    color: #4e3b11 !important;
+}
+
+/*----------------- New menu --------------------*/
+
+.littleSeparationLine {
+    width: 242px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    border-color: #a08c8a !important;
+}
+
+.logout {
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 10px !important;
+}
+
+.logoutGrid {
+    color: white;
+    display: flex;
+    align-items: center !important;
+}

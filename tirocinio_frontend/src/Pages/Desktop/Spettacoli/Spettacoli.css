@@ -1,0 +1,215 @@
+.scrollable-list {
+    height: 90%;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.scrollable-list::-webkit-scrollbar {
+    background-color: transparent !important;
+    width: 10px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.54);
+    border-radius: 0px 16px 16px 0px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    border-radius: 5px;
+
+}
+
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.stack {
+    width: 100%;
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+    margin-left: 5%;
+}
+
+.gridTop {
+    height: 10% !important;
+}
+
+.iconAdd {
+    width: 120px;
+    height: 50px;
+    color: white !important;
+    background-color: #CFAF6C !important;
+}
+
+.containerAll {
+    width: 100% !important;
+    height: 100% !important;
+    background-position: center;
+    background-size: cover;
+}
+
+.topRow {
+    height: 40% !important;
+    background-color: #3838388f;
+}
+
+.bottomRow {
+    height: 60% !important;
+    /* From https://css.glass */
+    background: rgba(137, 135, 135, 0.62);
+    border-radius: 16px 16px 0px 0px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.4px);
+    -webkit-backdrop-filter: blur(8.4px);
+}
+
+.iconText {
+    color: white;
+    font-size: 35px !important;
+    text-align: center;
+}
+
+.iconSpettacolo {
+    color: white;
+    font-size: 60px !important;
+    text-align: center;
+}
+
+.sx,
+.dx {
+    height: 100% !important;
+}
+
+.sx {
+    border-right: white 1px solid;
+}
+
+.sx:hover,
+.dx:hover {
+    background: rgba(44, 44, 44, 0.62);
+}
+
+.gridDxTop,
+.gridSxTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/************************* Crea Spettacolo ***************************/
+
+.topRowSpettacolo {
+    height: 25% !important;
+}
+
+.bottomRowSpettacolo {
+    height: 75% !important;
+    /* From https://css.glass */
+    background: rgba(137, 135, 135, 0.62);
+    border-radius: 16px 16px 0px 0px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.4px);
+    -webkit-backdrop-filter: blur(8.4px);
+}
+
+.sxSpettacoli,
+.dxSpettacoli {
+    height: 100% !important;
+}
+
+.sxSpettacoli {
+    border-right: white 1px solid;
+}
+
+.inputTitle {
+    width: 40% !important;
+    margin-left: 30% !important;
+    margin-right: 30% !important;
+    margin-top: 5px !important;
+}
+
+.buttonSubmit {
+    width: 15% !important;
+    margin-left: 42.5% !important;
+    margin-right: 42.5% !important;
+    margin-top: 40px !important;
+    background-color: #CFAF6C !important;
+}
+
+.inputDomanda {
+    width: 100% !important;
+    margin-top: 50px !important;
+}
+
+.IconDelete {
+    font-size: 40px !important;
+    color: white !important;
+}
+
+.risposta {
+    width: 80% !important;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+    margin-top: 20px !important;
+}
+
+.fileUpload {
+    /* width: 40% !important;
+    margin-left: 30% !important;
+    margin-right: 30% !important;*/
+    margin-top: 50px !important;
+    color: white !important;
+}
+
+.scrollable-list-crea-domande {
+    height: 70%;
+    /* Adjust this value as needed */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    width: 100%;
+}
+
+
+.scrollable-list-crea-domande::-webkit-scrollbar {
+    background-color: transparent !important;
+    width: 10px;
+}
+
+.scrollable-list-crea-domande::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.54);
+    border-radius: 0px 16px 16px 0px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    border-radius: 5px;
+
+}
+
+.scrollable-list-crea-domande::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.domanda {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+/* Landing Page */
+.divErrorResult {
+    width: 30% !important;
+    text-align: center;
+    color: white;
+}
+
+.iconErrorResult {
+    font-size: 60px !important;
+}

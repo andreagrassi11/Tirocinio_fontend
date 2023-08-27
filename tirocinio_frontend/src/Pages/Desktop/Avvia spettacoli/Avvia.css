@@ -1,0 +1,50 @@
+.qrcode {
+    width: 40% !important;
+    height: auto !important;
+    margin-left: 30% !important;
+    margin-right: 30% !important;
+    margin-top: 50px !important;
+}
+
+.Avvia:hover {
+    background: rgba(44, 44, 44, 0.62);
+}
+
+.textRealtime {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.buttonRealtime {
+    width: 15%;
+    margin-left: 42.5% !important;
+    margin-right: 42.5% !important;
+    height: 50px;
+    color: white !important;
+    background-color: #CFAF6C !important;
+}
+
+.answerRealtime {
+    width: 90% !important;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+    background-color: #3838388f;
+    border-radius: 10px;
+    font-size: 20px !important;
+    padding: 10px 5px 10px 5px;
+}
+
+.realtime {
+    height: 90% !important;
+}
+
+.divResultShow {
+    width: 30% !important;
+    text-align: center;
+    color: white;
+}
+
+.iconErrorResultShow {
+    font-size: 60px !important;
+}

@@ -1,0 +1,92 @@
+/* home mobile */
+body,
+html {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.container-mobile {
+    background: rgba(0, 0, 0, 0.61);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 80%;
+    height: auto;
+}
+
+.logo {
+    margin-top: 15px !important;
+    margin-bottom: 10px !important;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.inputField {
+    width: 80%;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+}
+
+.inputFieldPrivacy {
+    color: white !important;
+    width: 70%;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+}
+
+.FormGroupPrivacy {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.emailInput {
+    width: 100% !important;
+}
+
+.usernameInput,
+.passwordInput {
+    width: 100%;
+}
+
+.privacy {
+    margin-top: 35px;
+}
+
+.buttonStart {
+    background-color: #CFAF6C !important;
+    color: white !important;
+    width: 50% !important;
+    margin: 20px 25% 20px 25% !important;
+}
+
+/* waiting mobile */
+.textWaiting {
+    color: white !important;
+    text-align: center;
+}
+
+.waiting {
+    min-height: 60% !important;
+}
+
+.descriptionWaiting {
+    width: 80% !important;
+    margin: 30px 10% 20px 10% !important;
+    text-align: justify;
+}
+
+/* question mobile */
+.buttonResponse {
+    background-color: #CFAF6C !important;
+    color: white !important;
+    width: 50% !important;
+    margin: 10px 25% 10px 25% !important;
+}
+
+.titleWaiting {
+    width: 80% !important;
+    margin: 10px 10% 10px 10% !important;
+}

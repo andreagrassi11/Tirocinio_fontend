@@ -1,0 +1,19 @@
+.graficoBigScreen {
+    width: 90% !important;
+}
+
+.myCenterBigScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grafico {
+    height: auto;
+    margin-top: 50px;
+    width: 60% !important;
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+    min-height: 70%;
+}
