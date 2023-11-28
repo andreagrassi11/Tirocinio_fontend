@@ -45,12 +45,31 @@ function HomeMobile() {
             setErrorInput(true);
     }
 
+    const continueAsGuest = async () => {
+        let isError = false;
+        let response:any;
+        let privacyClean = true;
+
+        let e = generateRandomEmail();
+        response = await CreateUserShow(e, id.showId, privacyClean);
+        
+        if (!isError){
+            localStorage.setItem("idUser", response[1].value.id);
+            localStorage.setItem("emailUser", response[1].value.email);
+            navigate("/mobile/waiting/"+id.showId);
+        }else 
+            setErrorInput(true);
+    }
+
     return (
         <>
             <div className="container-mobile w3-display-middle">
 
                 <img src="/Logo.png" className="logo" alt="logo"/>
+                <Button className="buttonStart" variant="contained" onClick={continueAsGuest}>Continua come ospite</Button>
+                <hr className="line"></hr>
                 <form onSubmit={handleSubmit}>
+                    
                     <div className="inputField">
                         <h3>Email</h3>
                         <CssTextField error={ErrorInput} type="email" className="emailInput" name="email" variant="outlined"/>
@@ -62,7 +81,7 @@ function HomeMobile() {
                         </FormGroup>
                     </div>
 
-                    <Button className="buttonStart" variant="contained" type="submit">Accedi allo spettacolo</Button>
+                    <Button className="buttonStart" variant="contained" type="submit">Accedi</Button>
                 </form>
             </div>
         </>

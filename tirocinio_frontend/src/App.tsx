@@ -25,6 +25,7 @@ import WaitingMobile from './Pages/Mobile/WaitingMobile';
 import QuestionMobile from './Pages/Mobile/QuestionMobile';
 import SubmitMobile from './Pages/Mobile/SubmitMobile';
 import TerminedMobile from './Pages/Mobile/TerminedMobile';
+import BigGraph from './Pages/BigScreen/BigGraph';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
 				<Route index path="/homepage/visualizza/risultati/:showId/:showReId" element={<Homepage componentToRender={VisualizzaRisultati}/>}/>
 
 				<Route index path="/bigscreen/:showId" element={<BigScreen/>}/>
+				<Route index path="/bigGraph/:showId" element={<BigGraph/>}/>
 
 				<Route index path="/mobile/:showId" element={<HomeMobile/>}/>
 				<Route index path="/mobile/waiting/:showId" element={<WaitingMobile/>}/>

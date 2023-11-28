@@ -10,6 +10,7 @@ import { CreateConn, CreateConnBigScreen, ReceiveMessage, SendMessage, SendMessa
 import { TakeShowId, UpdateShowResultDo } from '../../../Utils/ShowService';
 import { TakeQuestionShowRealizedId, TakeShowRealizedId, TakeAnswerId } from '../../../Utils/ResultService';
 import Timer from './Timer';
+import Cronometro from '../../../Components/avvioSpettacolo/Cronometro';
 
 
 export function AvvioSpettacolo() {
@@ -85,7 +86,6 @@ export function AvvioSpettacolo() {
         connect();
         connectBigScreen();
     }, []);
-
 
     const sendMessages = async (questionToSend:any) => {
         if(questionIndex >= 0) 
@@ -187,7 +187,7 @@ export function AvvioSpettacolo() {
                                         </>
                                     )
                                 )}
-                                
+                                <Cronometro></Cronometro>
                             </div>
                         </div>
                     </div>
@@ -198,3 +198,4 @@ export function AvvioSpettacolo() {
 }
 
 export default AvvioSpettacolo;
+

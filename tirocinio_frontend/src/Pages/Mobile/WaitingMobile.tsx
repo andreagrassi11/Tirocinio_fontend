@@ -22,26 +22,26 @@ function WaitingMobile() {
     return (
         <>
             {question === "" ? 
-            (
-                <>
-                    <div className="container-mobile waiting w3-display-middle">
+                (
+                    <>
+                        <div className="container-mobile waiting w3-display-middle">
 
-                        <img src="/Logo.png" className="logo" alt="logo" onClick={() => {navigate("/mobile/question")}}/>
+                            <img src="/Logo.png" className="logo" alt="logo" onClick={() => {navigate("/mobile/question")}}/>
 
-                        <h1 className='textWaiting'>Benvenuto nello spettacolo!</h1>
-                        <p className='textWaiting descriptionWaiting'>Siamo entusiasti di averti qui per una serata 
-                        indimenticabile di pura musica e divertimento.
-                        </p>
-                        <p className='textWaiting descriptionWaiting'>
-                        Resta in attesa, perché stai per essere catapultato in un mondo 
-                        di opzioni straordinarie.</p>
-                    </div>
-                </>
-            )
-            : 
-            (
-                navigate("/mobile/question/"+id.showId, { state: question })
-            )
+                            <h1 className='textWaiting'>Benvenuto nello spettacolo!</h1>
+                            <p className='textWaiting descriptionWaiting'>Siamo entusiasti di averti qui per una serata 
+                            indimenticabile di pura musica e divertimento.
+                            </p>
+                            <p className='textWaiting descriptionWaiting'>
+                            Resta in attesa, perché stai per essere catapultato in un mondo 
+                            di opzioni straordinarie.</p>
+                        </div>
+                    </>
+                )
+                : 
+                (
+                    navigate("/mobile/question/"+id.showId, { state: question })
+                )
             }
             
         </>

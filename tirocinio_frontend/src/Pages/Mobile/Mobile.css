@@ -90,3 +90,9 @@ html {
     width: 80% !important;
     margin: 10px 10% 10px 10% !important;
 }
+
+.line {
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
